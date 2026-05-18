@@ -1,6 +1,6 @@
 const axios = require('axios');
 
-const API_URL = 'http://localhost:5050/api';
+const API_URL = 'https://performance-analytics-directory.onrender.com';
 
 async function runTests() {
   console.log('===================================================');

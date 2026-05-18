@@ -6,7 +6,7 @@ const AuthContext = createContext(null);
 
 // Create Axios Instance
 export const api = axios.create({
-  baseURL: 'http://localhost:5050/api',
+  baseURL: 'https://performance-analytics-directory.onrender.com',
 });
 
 // Axios Request Interceptor to dynamically attach Token
@@ -41,7 +41,7 @@ export const AuthProvider = ({ children }) => {
   // Signup Action
   const signup = async (name, email, password) => {
     try {
-      const response = await axios.post('http://localhost:5050/api/auth/signup', {
+      const response = await axios.post('https://performance-analytics-directory.onrender.com', {
         name,
         email,
         password,
@@ -66,7 +66,7 @@ export const AuthProvider = ({ children }) => {
   // Login Action
   const login = async (email, password) => {
     try {
-      const response = await axios.post('http://localhost:5050/api/auth/login', {
+      const response = await axios.post('https://performance-analytics-directory.onrender.com', {
         email,
         password,
       });
