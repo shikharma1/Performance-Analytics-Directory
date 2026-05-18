@@ -18,6 +18,11 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
+// Root route
+app.get('/', (req, res) => {
+  res.send('Performance Analytics API is running');
+});
+
 // Bind Routes
 app.use('/api/auth', authRoutes);
 app.use('/api/employees', employeeRoutes);
