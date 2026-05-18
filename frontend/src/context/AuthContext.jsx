@@ -41,7 +41,7 @@ export const AuthProvider = ({ children }) => {
   // Signup Action
   const signup = async (name, email, password) => {
     try {
-      const response = await axios.post('https://performance-analytics-directory.onrender.com', {
+      const response = await api.post('/auth/signup', {
         name,
         email,
         password,
@@ -66,7 +66,7 @@ export const AuthProvider = ({ children }) => {
   // Login Action
   const login = async (email, password) => {
     try {
-      const response = await axios.post('https://performance-analytics-directory.onrender.com', {
+      const response = await api.post('/auth/login', {
         email,
         password,
       });
