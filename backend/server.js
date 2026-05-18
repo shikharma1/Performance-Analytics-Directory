@@ -28,8 +28,17 @@ app.use('/api/auth', authRoutes);
 app.use('/api/employees', employeeRoutes);
 app.use('/api/ai', aiRoutes);
 
+// Alias routes for frontend without /api
+app.use('/auth', authRoutes);
+app.use('/employees', employeeRoutes);
+app.use('/ai', aiRoutes);
+
 // Health check endpoint
 app.get('/api/health', (req, res) => {
+  res.status(200).json({ status: 'healthy', timestamp: new Date() });
+});
+
+app.get('/health', (req, res) => {
   res.status(200).json({ status: 'healthy', timestamp: new Date() });
 });
 
